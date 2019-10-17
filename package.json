@@ -1,6 +1,6 @@
 {
 	"name": "gopher-translation-v2",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "Translate English words into words in the gophers' language.",
 	"main": "app.js",
 	"dependencies": {
@@ -12,7 +12,7 @@
 		"jest": "^24.9.0"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "jest",
 		"start": "node app.js"
 	},
 	"author": "Elisaveta Hristova",

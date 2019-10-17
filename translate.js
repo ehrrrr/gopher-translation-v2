@@ -2,6 +2,10 @@ function isLetter(c) {
 	return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
 }
 
+function isDigit(c) {
+	return c >= '0' && c <= '9';
+}
+
 function isVowel(c) {
 	return [ 'a', 'e', 'i', 'o', 'u' ].indexOf(c.toLowerCase()) !== -1;
 }
@@ -42,7 +46,7 @@ function removePunctuation(str) {
 }
 
 function translateWord(word) {
-	if (word) {
+	if (word && typeof word === 'string') {
 		const capitalized = isCapitalized(word);
 		word = removePunctuation(word);
 		word = word.toLowerCase();
@@ -69,12 +73,17 @@ function translateWord(word) {
 			return capitalized ? gopherWord.charAt(0).toUpperCase() + gopherWord.slice(1) : gopherWord;
 		}
 	}
+	return word;
 }
 
 function translateSentence(sentence) {
-	if (sentence) {
+	if (sentence && typeof sentence === 'string') {
 		const capitalized = isCapitalized(sentence);
-		const endPunctuationMark = sentence.split('').pop();
+		const lastSign = sentence.split('').pop();
+		let endPunctuationMark = '';
+		if (!isLetter(lastSign) && !isDigit(lastSign)) {
+			endPunctuationMark = lastSign;
+		}
 		sentence = removePunctuation(sentence);
 		const sentenceArr = sentence.split(' ');
 		const translatedArr = [];
@@ -86,7 +95,16 @@ function translateSentence(sentence) {
 			? translatedSentence.charAt(0).toUpperCase() + translatedSentence.slice(1)
 			: translatedSentence;
 	}
+	return sentence;
 }
+
+module.exports.isDigit = isDigit;
+module.exports.isLetter = isLetter;
+module.exports.isVowel = isVowel;
+module.exports.isConsonant = isConsonant;
+module.exports.isCapitalized = isCapitalized;
+module.exports.findConsonantSound = findConsonantSound;
+module.exports.removePunctuation = removePunctuation;
 
 module.exports.translateWord = translateWord;
 module.exports.translateSentence = translateSentence;
