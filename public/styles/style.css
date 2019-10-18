@@ -6,7 +6,7 @@
 
 body {
 	background-color: #f0bafb;
-	background-image: url("./images/2766672.jpg");
+	background-image: url("../images/2766672.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: 'Roboto', sans-serif;
@@ -189,13 +189,13 @@ button:hover {
 
 @media only screen and (max-width: 800px) {
 	body {
-		background-image: url("./images/2766672-mid.jpg");
+		background-image: url("../images/2766672-mid.jpg");
 	}
 }
 
 @media only screen and (max-width: 600px) {
 	body {
-		background-image: url("./images/2766672-small.jpg");
+		background-image: url("../images/2766672-small.jpg");
 	}
 	#title {
 		font-size: 26px;
@@ -230,7 +230,7 @@ button:hover {
 
 @media only screen and (max-width: 380px) {
 	body {
-		background-image: url("./images/2766672-xs.jpg");
+		background-image: url("../images/2766672-xs.jpg");
 	}
 	#title {
 		font-size: 28px;
