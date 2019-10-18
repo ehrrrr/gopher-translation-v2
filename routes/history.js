@@ -24,7 +24,9 @@ router.get('/', (req, res) => {
 			history: response
 		});
 	} else {
-		res.status(400).json('No entryes');
+		res.status(200).json({
+			history: []
+		});
 	}
 });
 
