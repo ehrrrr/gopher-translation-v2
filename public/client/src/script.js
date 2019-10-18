@@ -32,9 +32,11 @@ btn.addEventListener('click', function(event) {
 	const text = input.value;
 	if (text.length) {
 		if (isWord(text)) {
-			makePostRequest('word', text).then((gopher) => displayWord(text, Object.values(gopher)));
+			makePostRequest('word', 'english-word', text).then((gopher) => displayWord(text, Object.values(gopher)));
 		} else {
-			makePostRequest('sentence', text).then((gopher) => displaySentence(text, Object.values(gopher)));
+			makePostRequest('sentence', 'english-sentence', text).then((gopher) =>
+				displaySentence(text, Object.values(gopher))
+			);
 		}
 	}
 	input.value = '';
@@ -54,14 +56,14 @@ function isWord(text) {
 	return true;
 }
 
-async function makePostRequest(route, text) {
+async function makePostRequest(route, english, text) {
 	return await fetch(serverURL + route, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
-			[route]: text
+			[english]: text
 		})
 	})
 		.then((res) => res.json())

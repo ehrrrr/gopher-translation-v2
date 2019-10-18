@@ -5,7 +5,7 @@ describe('POST /word', function() {
 	it('responds with json', function(done) {
 		request(app)
 			.post('/word')
-			.send({ word: 'hello' })
+			.send({ ['english-word']: 'hello' })
 			.set('Accept', 'application/json')
 			.expect('Content-Type', /json/)
 			.expect(200)
@@ -20,7 +20,7 @@ describe('POST /sentence', function() {
 	it('responds with json', function(done) {
 		request(app)
 			.post('/sentence')
-			.send({ sentence: 'Hello world!' })
+			.send({ ['english-sentence']: 'Hello world!' })
 			.set('Accept', 'application/json')
 			.expect('Content-Type', /json/)
 			.expect(200)

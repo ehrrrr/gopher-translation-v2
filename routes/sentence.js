@@ -5,7 +5,7 @@ const { history, Entry } = require('../data/history');
 const { translateSentence } = require('../translate');
 
 router.post('/', (req, res) => {
-	const english = req.body.sentence;
+	const english = req.body['english-sentence'];
 	if (english && typeof english === 'string') {
 		const gopher = translateSentence(english);
 		const type = 'sentence';
