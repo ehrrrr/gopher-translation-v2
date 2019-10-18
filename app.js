@@ -23,3 +23,5 @@ app.use('/history', historyRoutes);
 app.listen(PORT, () => {
 	console.log(`Server has started! \nApp is running on port ${PORT}`);
 });
+
+module.exports = app;
