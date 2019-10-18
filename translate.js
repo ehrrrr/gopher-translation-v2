@@ -7,7 +7,7 @@ function isDigit(c) {
 }
 
 function isVowel(c) {
-	return [ 'a', 'e', 'i', 'o', 'u' ].indexOf(c.toLowerCase()) !== -1;
+	return [ 'a', 'e', 'i', 'o', 'u', 'y' ].indexOf(c.toLowerCase()) !== -1;
 }
 
 function isConsonant(c) {
