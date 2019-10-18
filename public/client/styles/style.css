@@ -38,6 +38,7 @@ li a {
 	padding: 14px 16px;
 	text-decoration: none;
 	font-weight: 100;
+	cursor: pointer;
 }
 
 li a:hover {
@@ -75,7 +76,7 @@ li a:hover {
 	/* color: #5e59a7; */
 }
 
-form,
+.form,
 .container {
 	width: 500px;
 	margin: 0 auto;
@@ -177,6 +178,18 @@ button:hover {
 	background-color: #d770fa;
 }
 
+#history-header {
+	margin: 20px auto;
+}
+.history-container {
+	width: 80%;
+	opacity: .95;
+}
+
+.hidden {
+	display: none;
+}
+
 @media only screen and (max-width: 1000px) {
 	#title {
 		font-size: 36px;
@@ -206,7 +219,7 @@ button:hover {
 		font-size: 18px;
 		padding: 0 20px;
 	}
-	form {
+	.form {
 		width: 320px;
 	}
 	input,
@@ -239,7 +252,7 @@ button:hover {
 	#subtitle {
 		font-size: 20px;
 	}
-	form {
+	.form {
 		width: 100%;
 		padding: 0 20px;
 	}

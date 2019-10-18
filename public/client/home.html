@@ -32,49 +32,24 @@
 <body>
     <nav>
         <ul>
-            <li><a id="home" href="./index.html">Home</a></li>
-            <li><a id="word" class="active" href="word.html">Word translation</a></li>
-            <li><a id="sentence" href="/sentence">Sentence translation</a></li>
-            <li><a id="history" href="/history">History</a></li>
+            <li><a id="home" class="active">Home</a></li>
+            <li><a id="word">Word translation</a></li>
+            <li><a id="sentence">Sentence translation</a></li>
+            <li><a id="history">History</a></li>
         </ul>
     </nav>
 
-    <header>
-        <!-- <h1 id="title">Gopher Language Translation</h1> -->
-        <h2 id="subtitle" class="big-subtitle">Translate English <span class="highlight">word</span> into gophers' language.</h2>
-    </header>
-    
-    <div class="container">
-            <div class="row">
-                <div class="column word-container">
-                    <p>
-                        English: <span class="display-word">examle</span>
-                    </p>
-                </div>
-                <div class="column">
-                    <p class="arrow">
-                        &#8658;
-                    </p>
-                </div>
-                <div class="column word-container">
-                    <p>
-                        Gopher: <span class="display-word">gexample</span>
-                    </p>
-                </div>
-            </div>
+    <div id="dynamic-section">
+        <header>
+            <h1 id="title">Gopher Language Translation</h1>
+            <h2 id="subtitle">Translate English word or sentence into gophers' language.</h2>
+        </header>
+    </div>
+    <main id="form-section">
+        <div class="form">
+            <input id="home-page-input" type="text" placeholder="" autocomplete="off" autofocus>
+            <button id="btn" class="button">Translate</button>
         </div>
-    
-    <main>
-        <form action="/word" method="POST">
-            <input type="text" name="word" placeholder="Type your word here" autocomplete="off" autofocus>
-            <button type="submit">Translate</button>
-        </form>
     </main>
-    <script>
-        document.getElementsByClassName('active')[0].classList.remove("active");
-        document.getElementById('word').classList.add("active");
-    </script>
-
-    
 </body>
 </html>

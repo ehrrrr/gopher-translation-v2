@@ -4,57 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="./images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./images/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="./images/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- favicon end -->
-    <title>Gopher translator</title>
-    <link href="https://fonts.googleapis.com/css?family=The+Girl+Next+Door&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
-    <script defer src="./src/script.js"></script>
+    <title>Gophers' translator API</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a id="home" class="active" href="/">Home</a></li>
-            <li><a id="word" href="./word.html">Word translation</a></li>
-            <li><a id="sentence" href="/sentence">Sentence translation</a></li>
-            <li><a id="history" href="/history">History</a></li>
-        </ul>
-    </nav>
+    <h1>Welcome to the gophers' translator.</h1>
+    <table>
+    <tr>
+        <th>Route</th>
+        <th>Method</th>
+        <th>Accept JSON data</th>
+        <th>Return JSON data</th>
+    </tr>
+    <tr>
+        <td>/word</td>
+        <td>POST</td>
+        <td> <xmp>{ “english-word” : ”<a single English word>” }</xmp></td>
+        <td> <xmp>{ “gopher-word” : ”<translated version of the given word>” }</xmp></td>
+    </tr>
+    <tr>
+        <td>/sentence</td>
+        <td>POST</td>
+        <td> <xmp>{ “english-sentence” : ”<sentence of English words>” }</xmp></td>
+        <td> <xmp>{ “gopher-sentence” : ”<translated version of the given sentence>” }</xmp></td>
+    </tr>
+    <tr>
+        <td>/history</td>
+        <td>GET</td>
+        <td> --- </td>
+        <td> <xmp>{ “history” : [ { “apple” : ”gapple” }, { “my” : ”ymogo” },…. ] }</xmp></td>
+    </tr>
+    </table>
 
-    <header>
-        <h1 id="title">Gopher Language Translation</h1>
-        <h2 id="subtitle">Translate English word or sentence into gophers' language.</h2>
-    </header>
-    <main>
-        <form action="/word" method="POST">
-            <input id="input" type="text" name="word" placeholder="" autocomplete="off" autofocus>
-            <button id="btn" type="submit" class="button">Translate</button>
-        </form>
+    <div class="normal">
+        <h2>The language that the gophers speak is a modified version of English and has a few simple rules.</h2>
+        <ol>
+            <li>
+                If a word starts with a vowel letter, add prefix “g” to the word (ex. apple => gapple)
+            </li>
     
-        <form action="/sentence" method="POST">
-            <input id="input" type="text" name="sentence" placeholder="" autocomplete="off" autofocus>
-            <button id="btn" type="submit" class="button">Translate</button>
-        </form>
-    </main>
+            <li>
+                If a word starts with the consonant letters “xr”, add the prefix “ge” to the begging of the word. Such words as “xray” actually sound in the beginning with vowel sound as you pronounce them so a true gopher would say “gexray”.
+            </li>
+            
+            <li>
+                If a word starts with a consonant sound, move it to the end of the word and then add “ogo” suffix to the word. Consonant sounds can be made up of multiple consonants, a.k.a. a consonant cluster (e.g. "chair" -> "airchogo”).
+            </li>
+    
+            <li>
+                If a word starts with a consonant sound followed by "qu", move it to the end of the word, and then add "ogo" suffix to the word (e.g. "square" -> "aresquogo").
+            </li>            
+        </ol>
+        <a href="./client/home.html" class="btn">Try it in the client side</a>
 
-    
+    </div>
 </body>
 </html>
